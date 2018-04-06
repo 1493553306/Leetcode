@@ -21,6 +21,7 @@ public class RotateImage {
             for(int j = 0; j < n; j++)
                 matrix[i][j] = sc.nextInt();
         RotateImage sl = new RotateImage();
+
         sl.rotate(matrix);
     }
 
