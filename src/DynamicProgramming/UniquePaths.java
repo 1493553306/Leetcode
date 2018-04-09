@@ -1,5 +1,5 @@
+package DynamicProgramming;
 import java.util.Scanner;
-
 public class UniquePaths {
     public int uniquePaths(int m, int n) {
         if(m <=1 || n <= 1) return 1;
