@@ -1,4 +1,4 @@
-import java.awt.desktop.ScreenSleepEvent;
+package DynamicProgramming;
 import java.util.Scanner;
 
 public class MinimumPathSum {
