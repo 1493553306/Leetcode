@@ -1,3 +1,5 @@
+package DynamicProgramming;
+
 import java.util.Scanner;
 
 /*这道题实际上是 Catalan Number卡塔兰数的一个例子,是一道动态规划题。n = 0 时赋为1，因为空树也算一种二叉搜索树；
