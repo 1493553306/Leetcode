@@ -13,3 +13,14 @@ Set set = new HashSet(list);
 
 84 Largest Rectangle in Histogram
 用到栈， Stack<Integer> s = new Stack<Integer>();
+
+169. Majority Element
+Map<Character, Integer> target = new HashMap<Character, Integer>();
+
+if(target.containsKey(t.charAt(i))) target.put(t.charAt(i), target.get(t.charAt(i)) +1);         //如果包含键值，则键值对应的value+1
+else target.put(t.charAt(i),1);        //否则加入一个新的键值
+
+//遍历map中的键 
+for (Integer key : target.keySet()) { } 
+//遍历map中的值 
+for (Integer value : target.values()) { }
