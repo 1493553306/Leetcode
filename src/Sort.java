@@ -32,8 +32,8 @@ public class Sort {
             }
         }
         return result;
-    }*/
-
+    }
+*/
     //快速排序
     public int[] sort(int[] array){
         dchelp(array, 0, array.length-1);
@@ -42,23 +42,21 @@ public class Sort {
     public void dchelp(int[] array, int start, int end){
         if(start >= end)
             return;
-        int base = start, tmp;
+        int base = array[start];
         int left = start, right = end;
         while (left < right){
-            if(array[right] <= array[base]){
-                tmp = array[base];
-                array[base] = array[right];
-                while (left < right && array[left] <= tmp)
+            if(array[right] <= base){
+                array[left] = array[right];
+                while (left < right && array[left] <= base)
                     left++;
                 array[right] = array[left];
-                array[left] = tmp;
+                array[left] = base;
             }
             right--;
         }
         dchelp(array, start, left-1);
         dchelp(array, left+1, end);
         return;
-
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -67,6 +65,6 @@ public class Sort {
         for(int i = 0; i < len; i++)
             array[i] = sc.nextInt();
         Sort sl = new Sort();
-        sl.sort(array);
+        int[] result = sl.sort(array);
     }
 }
