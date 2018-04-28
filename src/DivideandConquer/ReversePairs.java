@@ -33,8 +33,7 @@ public class ReversePairs {
         for(int i = 0; i < nums.length; i++){
             if(x < left.length && y < right.length){
                 if(left[x] < right[y]){
-                    result[i] = left[x];
-                    x++;
+                    result[i] = left[x++];
                 }
                 else {
                     tmp = x;
@@ -43,24 +42,17 @@ public class ReversePairs {
                             count += (left.length-tmp);
                             break;
                         }
-                        else
-                            tmp++;
+                        tmp++;
                     }
-                    result[i] = right[y];
-                    y++;
+                    result[i] = right[y++];
                 }
             }
-            else if(x >= left.length) {
-                result[i] = right[y];
-                y++;
-            }
-            else {
-                result[i] = left[x];
-                x++;
-            }
+            else if(x >= left.length)
+                result[i] = right[y++];
+            else
+                result[i] = left[x++];
         }
         return result;
-
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);

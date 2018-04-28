@@ -2,25 +2,38 @@
 当给Integer直接赋值时，如果在-128到127之间相等的话，它们会共用一块内存;而超过这个范围，则对应的Integer对象有多少个就开辟多少个。
 因此在Integer比较的时候，先用.intVaule()转化为int类型进行比较，较为安全。
 
+
+
 78. Subsets
 Set和List之间的转换：
 List list = new ArrayList(set);
 Set set = new HashSet(list);
 
+
+
 79 Word Search
 二维数组rang[][]的长度：rang.length();宽度：rang[0].length()
 需要跟陈阳讨论，回溯的时候，是否有更快的方法。
 
+
+
 84 Largest Rectangle in Histogram
 用到栈， Stack<Integer> s = new Stack<Integer>();
+
+
 
 169. Majority Element
 Map<Character, Integer> target = new HashMap<Character, Integer>();
 
-if(target.containsKey(t.charAt(i))) target.put(t.charAt(i), target.get(t.charAt(i)) +1);         //如果包含键值，则键值对应的value+1
-else target.put(t.charAt(i),1);        //否则加入一个新的键值
+if(target.containsKey(t.charAt(i))) 
+	target.put(t.charAt(i), target.get(t.charAt(i)) +1);         //如果包含键值，则键值对应的value+1
+else 
+	target.put(t.charAt(i),1);        //否则加入一个新的键值
 
 //遍历map中的键 
 for (Integer key : target.keySet()) { } 
 //遍历map中的值 
 for (Integer value : target.values()) { }
+
+
+617. Merge Two Binary 
