@@ -38,26 +38,25 @@ public class BinaryTreeInorderTraversal {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         BinaryTreeInorderTraversal sl = new BinaryTreeInorderTraversal();
-        int len = sc.nextInt(), index = 1;
-        char[] tree = new char[len];
+        int len = sc.nextInt(), index = 1, var;
         TreeNode root, tmp;
-        Queue<TreeNode> q;
-        for(int i = 0; i < len; i++)
-            tree[i] = sc.next().charAt(0);
-        root = new TreeNode(tree[0]-'0');
-        q= new LinkedList<TreeNode>();
+        root = new TreeNode(sc.nextInt());
+        Queue<TreeNode> q= new LinkedList<TreeNode>();
         q.add(root);
-        while (index < tree.length){
+
+        while (index < len){
             tmp = q.poll();
-            if (tree[index] != '#')
+            var = sc.nextInt();
+            if (var != 0)
             {
-                tmp.left = new TreeNode(tree[index]-'0');
+                tmp.left = new TreeNode(var);
                 q.add(tmp.left);
             }
             index++;
-            if(index < tree.length && tree[index] != '#')
+            var = sc.nextInt();
+            if(index < len && var != 0)
             {
-                tmp.right = new TreeNode(tree[index] -'0');
+                tmp.right = new TreeNode(var);
                 q.add(tmp.right);
             }
             index++;

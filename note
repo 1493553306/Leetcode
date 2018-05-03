@@ -37,3 +37,4 @@ for (Integer value : target.values()) { }
 
 
 617. Merge Two Binary 
+队列 Queue<TreeNode> qe = new LinkedList<TreeNode>();
