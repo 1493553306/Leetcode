@@ -20,39 +20,25 @@ public class ReversePairs {
     int count = 0;
     public int reversePairs(int[] nums) {
         if(nums.length <=1) return 0;
-        int[] result = dchelp(nums);
+        dchelp(nums, 0, nums.length-1);
         return count;
     }
-    public int[] dchelp(int[] nums){
-        int[] result = new int[nums.length];
-        if(nums.length == 1) return nums;
-        int mid = nums.length/2;
-        int[] left = dchelp(Arrays.copyOfRange(nums, 0, mid));
-        int[] right = dchelp(Arrays.copyOfRange(nums, mid, nums.length));
-        int x = 0, y = 0, tmp = 0;
-        for(int i = 0; i < nums.length; i++){
-            if(x < left.length && y < right.length){
-                if(left[x] < right[y]){
-                    result[i] = left[x++];
-                }
-                else {
-                    tmp = x;
-                    while (tmp < left.length){
-                        if(left[tmp] > 2L*right[y]){
-                            count += (left.length-tmp);
-                            break;
-                        }
-                        tmp++;
-                    }
-                    result[i] = right[y++];
-                }
-            }
-            else if(x >= left.length)
-                result[i] = right[y++];
-            else
-                result[i] = left[x++];
-        }
-        return result;
+    public void dchelp(int[] nums, int start, int end){
+        if(start == end) return;
+        int mid = (end - start)/2;
+        dchelp(nums, start, start + mid);
+        dchelp(nums, start+mid+1, end);
+        int x = start, y = start+mid+1, tmp;
+       while (x <= start+mid && y <= end){
+           if(nums[x] <= 2L*nums[y] )
+               x++;
+           else {
+               count += start+mid - x + 1;
+               y++;
+           }
+       }
+        Arrays.sort(nums, start, end+1);
+        return ;
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
