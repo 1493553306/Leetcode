@@ -1,14 +1,26 @@
 import java.util.Scanner;
 
 public class test {
-
-    public static void main(String[] args){
-        double a = 1/Math.pow(62,1)+Math.pow(61,1)/Math.pow(62,2)+Math.pow(61,2)/Math.pow(62,3)+Math.pow(61,3)/Math.pow(62,4)+
-                Math.pow(61,4)/Math.pow(62,5)+Math.pow(61,5)/Math.pow(62,6)+Math.pow(61,6)/Math.pow(62,7)+Math.pow(61,7)/Math.pow(62,8)+
-                Math.pow(61,8)/Math.pow(62,9)+Math.pow(61,9)/Math.pow(62,10);
-        double b = 1 - Math.pow(61,10)/Math.pow(62,10);
-        System.out.print(a);
-        System.out.print('\n');
-        System.out.print(b);
-    }
+   public static void main(String[] args){
+       Scanner sc = new Scanner(System.in);
+       String s = sc.nextLine();
+       int dis = 0, max = 0;
+       for(int i = 0; i < s.length(); i++){
+           for(int j = i+1; j < s.length(); j++){
+               if(s.charAt(i) == s.charAt(j)){
+                   dis = j-i -1;
+                   int m = 1;
+                   while (m <= dis && j+m < s.length()){
+                       if (s.charAt(i + m) != s.charAt(j + m)){
+                           break;
+                       }
+                       m++;
+                   }
+                   if(m-1 == dis && j + dis <s.length())
+                       max = Math.max(2*(dis+1),max);
+               }
+           }
+       }
+       System.out.println(max);
+   }
 }

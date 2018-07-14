@@ -1,10 +1,12 @@
+import Base.ListNode;
+
 import java.util.Scanner;
 
 public class RemoveNthNodeFromEndofList {
  /*   //two pass
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode tmp = head;
-        ListNode result = new ListNode(0);
+    public Base.ListNode removeNthFromEnd(Base.ListNode head, int n) {
+        Base.ListNode tmp = head;
+        Base.ListNode result = new Base.ListNode(0);
         result.next = head;
         int len = 1;
         while (tmp.next != null){

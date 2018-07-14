@@ -1,3 +1,5 @@
+import Base.ListNode;
+
 import java.util.Scanner;
 
 public class MergeTwoSortedLists {

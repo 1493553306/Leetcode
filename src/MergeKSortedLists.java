@@ -1,9 +1,11 @@
+import Base.ListNode;
+
 import java.util.Scanner;
 
 public class MergeKSortedLists {
-/*    public ListNode mergeKLists(ListNode[] lists) {
-        ListNode result = new ListNode(-1);
-        ListNode tmp = result;
+/*    public Base.ListNode mergeKLists(Base.ListNode[] lists) {
+        Base.ListNode result = new Base.ListNode(-1);
+        Base.ListNode tmp = result;
         int num = lists.length, leftnum = lists.length;
         if (lists.length == 0)
             return result.next;
