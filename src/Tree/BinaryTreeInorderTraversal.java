@@ -1,4 +1,5 @@
-import java.time.temporal.Temporal;
+package Tree;
+
 import java.util.*;
 
 public class BinaryTreeInorderTraversal {
@@ -19,18 +20,15 @@ public class BinaryTreeInorderTraversal {
    public List<Integer> inorderTraversal(TreeNode root){
        List<Integer> result = new LinkedList<Integer>();
        Stack<TreeNode> q = new Stack<TreeNode>();
-       if(root!= null) q.add(root);
-       TreeNode tmp = root;
-       while (!q.isEmpty()){
-           while (tmp!= null && tmp.left != null){
-               q.add(tmp.left);
-               tmp = tmp.left;
+       TreeNode cur = root;
+       while (cur != null || !q.isEmpty()){
+           while (cur!= null ){
+               q.add(cur);
+               cur = cur.left;
            }
-           tmp = q.pop();
-           result.add(tmp.val);
-           tmp = tmp.right;
-           if(tmp != null)
-               q.add(tmp);
+           cur = q.pop();
+           result.add(cur.val);
+           cur = cur.right;
        }
        System.out.print('a');
        return result;
