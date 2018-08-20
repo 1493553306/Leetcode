@@ -1,7 +1,7 @@
 package Base;
 
 import java.util.Scanner;
-
+//改进版插入排序
 public class ShellSort {
     public static void shellSort(int[] array){
         for(int gap = array.length/2; gap > 0; gap /=2){
@@ -21,7 +21,7 @@ public class ShellSort {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        String[] tmp = str.split(" ");
+        String[] tmp = str.split(",");
         int[] nums = new int[tmp.length];
         for(int i = 0; i < tmp.length; i++)
             nums[i] = Integer.valueOf(tmp[i]);

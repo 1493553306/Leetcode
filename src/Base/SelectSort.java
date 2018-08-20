@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class SelectSort {
     public static void selectsort(int[] array){
         for(int i = 0; i < array.length; i++){
-            for(int j = i +1; j < array.length; j++){
-                if(array[i] > array[j]){
-                    int tmp = array[i];
-                    array[i] = array[j];
-                    array[j] = tmp;
-                }
+            int minIndex = i;
+            for(int j = i+1; j < array.length; j++){
+                if(array[j] < array[minIndex])
+                    minIndex = j;
             }
+            int tmp = array[i];
+            array[i] = array[minIndex];
+            array[minIndex] = tmp;
         }
-
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

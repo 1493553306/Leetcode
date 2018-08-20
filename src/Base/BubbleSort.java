@@ -22,7 +22,7 @@ public class BubbleSort {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        String[] tmp = str.split(" ");
+        String[] tmp = str.split(",");
         int[] value = new int[tmp.length];
         for(int i = 0; i < tmp.length; i++)
             value[i] = Integer.valueOf(tmp[i]);
