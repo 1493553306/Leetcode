@@ -1,6 +1,7 @@
-import Base.ListNode;
+package DivideandConquer;
 
-import java.util.Scanner;
+import Base.ListNode;
+import java.util.*;
 
 public class MergeKSortedLists {
 /*    public Base.ListNode mergeKLists(Base.ListNode[] lists) {
@@ -45,7 +46,8 @@ public class MergeKSortedLists {
                 tmp.next = lists[i];
         return result.next;
     }*/
-public ListNode mergeKLists(ListNode[] lists) {
+/*方法一*/
+/*public ListNode mergeKLists(ListNode[] lists) {
     MergeTwoSortedLists sl = new MergeTwoSortedLists();
     int len = lists.length;
     if (lists.length == 0)
@@ -59,7 +61,39 @@ public ListNode mergeKLists(ListNode[] lists) {
         len = mid;
     }
     return lists[0];
-}
+}*/
+
+/*方法二*/
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists==null||lists.length==0) return null;
+        PriorityQueue<ListNode> queue= new PriorityQueue<ListNode>(lists.length,new Comparator<ListNode>(){
+            @Override
+            public int compare(ListNode o1,ListNode o2){
+                if (o1.val < o2.val)
+                    return -1;
+                else if (o1.val == o2.val)
+                    return 0;
+                else
+                    return 1;
+            }
+        });
+
+        ListNode dummy = new ListNode(0);
+        ListNode tail=dummy;
+
+        for (ListNode node:lists)
+            if (node!=null)
+                queue.add(node);
+
+        while (!queue.isEmpty()){
+            tail.next=queue.poll();
+            tail=tail.next;
+
+            if (tail.next!=null)
+                queue.add(tail.next);
+        }
+        return dummy.next;
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int k = sc.nextInt();

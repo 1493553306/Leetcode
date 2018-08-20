@@ -6,24 +6,27 @@ import java.util.Scanner;
 
 public class DifferentWaystoAddParentheses {
     public List<Integer> diffWaysToCompute(String input) {
-        List<Integer> result = new LinkedList<Integer>(), left = new LinkedList<Integer>(), right = new LinkedList<Integer>();
-        for(int i = 0; i < input.length(); i++){
+        return dchelper(input, 0, input.length());
+    }
+    public static List<Integer> dchelper(String input, int start, int end){
+        List<Integer> result = new LinkedList<Integer>();
+        for(int i = start; i < end; i++){
             if(input.charAt(i) == '+' || input.charAt(i) == '-' || input.charAt(i) == '*'){
-                left = diffWaysToCompute(input.substring(0, i));
-                right = diffWaysToCompute(input.substring(i+1, input.length()));
+                List<Integer> left = dchelper(input, start, i);
+                List<Integer> right = dchelper(input,i+1, end);
                 for(int m = 0; m < left.size(); m++){
                     for(int n = 0; n < right.size(); n++){
                         if(input.charAt(i) == '+')
                             result.add(left.get(m)+right.get(n));
-                        if(input.charAt(i) == '-')
+                        else if(input.charAt(i) == '-')
                             result.add(left.get(m)-right.get(n));
-                        if(input.charAt(i) == '*')
+                        else
                             result.add(left.get(m)*right.get(n));
                     }
                 }
             }
         }
-        if(result.isEmpty()) result.add(Integer.parseInt(input));
+        if(result.isEmpty()) result.add(Integer.parseInt(input.substring(start, end)));
         return result;
     }
 
