@@ -1,7 +1,7 @@
 package Base;
 
 import java.util.Scanner;
-//改进版插入排序
+//改进版插入排序   不稳定
 public class ShellSort {
     public static void shellSort(int[] array){
         for(int gap = array.length/2; gap > 0; gap /=2){

@@ -2,6 +2,8 @@ package Base;
 
 import java.util.Scanner;
 //https://www.cnblogs.com/chengxiao/p/6129630.html
+
+//nlogn 不稳定
 public class HeapSort {
     public static void heapSort(int[] arr){
         int len = arr.length;
@@ -37,7 +39,7 @@ public class HeapSort {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        String[] tmp = str.split(", ");
+        String[] tmp = str.split(" ");
         int[] nums = new int[tmp.length];
         for(int i = 0; i < tmp.length; i++)
             nums[i] = Integer.valueOf(tmp[i]);

@@ -1,7 +1,7 @@
 package Base;
 
 import java.util.Scanner;
-//O(nlogn)
+//O(nlogn)  稳定
 public class MergeSort {
     static int[] help;
     public static void mergeSort(int[] nums, int start, int end){

@@ -1,7 +1,7 @@
 package Base;
 import java.util.Scanner;
 
-//O(nlogn)
+//O(nlogn)    不稳定
 public class QuickSort {
     public static int[] quicksort(int[] array){
         dchelp(array, 0, array.length-1);

@@ -2,7 +2,7 @@ package Base;
 
 import java.util.Scanner;
 
-//average O(n^2) best O(n)
+//average O(n^2) best O(n)  稳定
 public class BubbleSort {
     public static void bubbleSort(int[] nums){
         int tmp = 0;
@@ -22,7 +22,7 @@ public class BubbleSort {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        String[] tmp = str.split(",");
+        String[] tmp = str.split(" ");
         int[] value = new int[tmp.length];
         for(int i = 0; i < tmp.length; i++)
             value[i] = Integer.valueOf(tmp[i]);

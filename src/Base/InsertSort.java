@@ -2,7 +2,7 @@ package Base;
 
 import java.util.Scanner;
 
-//O(n^2)
+//O(n^2)  稳定
 //4 2 1 6 3 6 0 -5 1 1
 public class InsertSort {
     public static void insertSort(int[] num){

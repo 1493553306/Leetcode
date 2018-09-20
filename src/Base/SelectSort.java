@@ -1,7 +1,7 @@
 package Base;
 import java.util.Scanner;
 
-//O(n^2)
+//O(n^2)  不稳定
 public class SelectSort {
     public static void selectsort(int[] array){
         for(int i = 0; i < array.length; i++){
